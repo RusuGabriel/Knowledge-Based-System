@@ -26,7 +26,7 @@ A knowledge-based system (KBS) is a computer program that reasons and uses a kno
 
 The first part, the knowledge base, represents facts about the world, often in some form of subsumption ontology (rather than implicitly embedded in procedural code, in the way a conventional computer program does). Other common approaches in addition to a subsumption ontology include frames, conceptual graphs, and logical assertions.
 
-The second part, the inference engine, allows new knowledge to be inferred. Most commonly, it can take the form of IF-THEN rules[2] coupled with forward or backward chaining approaches. Other approaches include the use of automated theorem provers, logic programming, blackboard systems, and term rewriting systems such as CHR (Constraint Handling Rules). These more formal approaches are covered in detail in the Wikipedia article on knowledge representation and reasoning.
+The second part, the inference engine, allows new knowledge to be inferred. Most commonly, it can take the form of IF-THEN rules coupled with forward or backward chaining approaches. Other approaches include the use of automated theorem provers, logic programming, blackboard systems, and term rewriting systems such as CHR (Constraint Handling Rules).
 ## 🏁 Getting Started <a name = "getting_started"></a>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
