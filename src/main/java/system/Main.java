@@ -22,7 +22,6 @@ public class Main extends Application {
         System.out.println(resources.listFiles());
         Label l = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
         Scene scene = new Scene(new StackPane(l), 640, 480);
-        
         stage.setScene(scene);
         stage.show();
     }
