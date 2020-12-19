@@ -3,10 +3,10 @@
  <img width=200px height=200px src="src\main\resources\knowledge.png" alt="Project logo"></a>
 </p>
 
-<h1 align="center">Knowledge Based System</h1>
+<h1 align="center">Knowledge-Based System</h1>
 
 
-<p align="center"> Few lines describing your project.
+<p align="center"> This project aims to implement a simple yet powerful Knowledge-Based System from scratch using the Java Language. The purpose of this project is to make the best decision regarding electronics purchases.
     <br> 
 </p>
 
@@ -22,8 +22,11 @@
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
-Write about 1-2 paragraphs describing the purpose of your project.
+A knowledge-based system (KBS) is a computer program that reasons and uses a knowledge base to solve complex problems. The term is broad and refers to many different kinds of systems. The one common theme that unites all knowledge based systems is an attempt to represent knowledge explicitly and a reasoning system that allows it to derive new knowledge. Thus, a knowledge-based system has two distinguishing features: a knowledge base and an inference engine.
 
+The first part, the knowledge base, represents facts about the world, often in some form of subsumption ontology (rather than implicitly embedded in procedural code, in the way a conventional computer program does). Other common approaches in addition to a subsumption ontology include frames, conceptual graphs, and logical assertions.
+
+The second part, the inference engine, allows new knowledge to be inferred. Most commonly, it can take the form of IF-THEN rules coupled with forward or backward chaining approaches. Other approaches include the use of automated theorem provers, logic programming, blackboard systems, and term rewriting systems such as CHR (Constraint Handling Rules).
 ## 🏁 Getting Started <a name = "getting_started"></a>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
