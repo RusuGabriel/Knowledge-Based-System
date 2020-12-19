@@ -9,7 +9,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
- * Hello world!
+ * Main class of the system
  *
  */
 public class Main extends Application {
