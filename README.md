@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="src\main\resources\ai.png" alt="Project logo"></a>
+ <img width=200px height=200px src="src\main\resources\images\ai.png" alt="Project logo"></a>
 </p>
 
 <h1 align="center">Knowledge-Based System</h1>
