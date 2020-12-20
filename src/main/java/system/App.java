@@ -25,7 +25,7 @@ public class App extends Application {
     public void start(Stage stage) {
         guiStage = stage;
         instance = this;
-        display();
+        display(Constants.Screens.HOME);
 
     }
 
@@ -34,9 +34,9 @@ public class App extends Application {
     }
 
 
-    public static void display() {
+    public static void display(String screen) {
         try {
-            root = FXMLLoader.load(instance.getClass().getResource("/templates/HomeScreen.fxml"));
+            root = FXMLLoader.load(instance.getClass().getResource(screen));
             Scene scene = new Scene(root);
             guiStage.setScene(scene);
             guiStage.show();
