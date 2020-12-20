@@ -33,7 +33,13 @@ public class App extends Application {
     }
 
     
-
+    /**
+     * This method changes the current screen of the app based 
+     * on the <b>screen</b> parameter. This method enables the 
+     * navigation within the App.
+     * 
+     * @param screen - the screen name that will be displayed
+     */
     public static void display(String screen) {
         try {
             root = FXMLLoader.load(instance.getClass().getResource(screen));
