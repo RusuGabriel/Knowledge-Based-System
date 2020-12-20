@@ -1,11 +1,11 @@
 package system;
 
-
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
+import java.util.logging.Logger;
 
 /**
  * Main class of the system
@@ -14,6 +14,7 @@ public class App extends Application {
     private static Parent root;
     private static Stage stage;
     private static App instance;
+    private static Logger logger;
 
     @Override
     public void start(Stage stage) {
@@ -30,6 +31,7 @@ public class App extends Application {
     private static void initialize( App currentApp, Stage stage) {
         App.stage = stage;
         App.instance = currentApp;
+        App.logger = Logger.getLogger(App.class.getName());
     }
 
     
