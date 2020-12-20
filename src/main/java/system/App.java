@@ -37,16 +37,12 @@ public class App extends Application {
     public static void display() {
         try {
             root = FXMLLoader.load(instance.getClass().getResource("/templates/HomeScreen.fxml"));
-            System.out.println(root);
-            System.out.println("WTF is happening??!");
             Scene scene = new Scene(root);
             guiStage.setScene(scene);
             guiStage.show();
         } catch (Exception e) {
-            System.out.println("The error message is:");
+            System.out.println("ERROR - The error message is: ");
             System.out.println(e.getMessage());
-            System.out.println(e.getCause());
-            System.out.println(e.getStackTrace());
         }
     }
 
