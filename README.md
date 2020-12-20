@@ -76,10 +76,9 @@ mvn clean javafx:run
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Visual Studio Code](https://code.visualstudio.com/) - code editor
+- [Maven](https://maven.apache.org/) - build system for Java apps
+- [JDK 15](https://www.oracle.com/java/technologies/javase-downloads.html) - virtual machine for Java apps
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@RusuGabriel](https://github.com/RusuGabriel) - Idea & Initial work
