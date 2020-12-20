@@ -17,13 +17,19 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-        initialize(stage);
+        initialize(this,stage);
         display(Constants.Screens.HOME);
     }
 
-    private void initialize(Stage stage) {
+    /**
+     * Method to initialize the needed internal instance variables,
+     * after running the app has all the internal references initialized
+     *
+     * @param stage - the primary stage of the app
+     */
+    private static void initialize( App currentApp, Stage stage) {
         App.stage = stage;
-        App.instance = this;
+        App.instance = currentApp;
     }
 
     
