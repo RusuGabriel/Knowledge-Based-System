@@ -20,4 +20,9 @@ public class HomeController implements Initializable {
         App.display(Constants.Screens.KNOWLEDGE_BASE);
     }
 
+    @FXML
+    public void goToKnowledgeBase(ActionEvent actionEvent){
+        App.display(Constants.Screens.KNOWLEDGE_BASE);
+    }
+
 }
