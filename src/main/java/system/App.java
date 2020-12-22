@@ -47,6 +47,8 @@ public class App extends Application {
             root = FXMLLoader.load(instance.getClass().getResource(screen));
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.setResizable(false);
+            stage.setTitle("Electronics Knowledge-Base");
             stage.show();
         } catch (Exception e) {
             System.out.println("ERROR - The error message is: ");
