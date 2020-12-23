@@ -12,6 +12,8 @@ public class KnowledgeStore {
     private static KnowledgeStore instance = null;
     private ArrayList<Phone> phoneStore = null;
     private ArrayList<Tablet> tabletStore = null;
+    private ArrayList<Watch> watchStore = null;
+
     private Document document = null;
 
     private KnowledgeStore() {
@@ -42,11 +44,14 @@ public class KnowledgeStore {
     public void loadKnowledge() {
         phoneStore = new ArrayList<>();
         tabletStore = new ArrayList<>();
+        watchStore = new ArrayList<>();
 
         // Get all phones
         parse(document, Constants.Type.PHONE);
         // Get all tablets
         parse(document, Constants.Type.TABLET);
+        // Get all watches
+        parse(document, Constants.Type.WATCH);
     }
 
     private void parse(Document document, String asType) {
@@ -68,6 +73,10 @@ public class KnowledgeStore {
 
             case Constants.Type.TABLET:
                 tabletStore.add(new Tablet(element));
+                break;
+
+            case Constants.Type.WATCH:
+                watchStore.add(new Watch(element));
                 break;
 
             default:
