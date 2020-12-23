@@ -12,5 +12,14 @@ public final class Constants {
         }
     }
 
+    public static final class Type {
+        public static final String PHONE = "phone";
+        public static final String TABLET = "tablet";
+        public static final String WATCH = "watch";
+
+        private Type() {
+        }
+    }
+
     private Constants(){}
 }
