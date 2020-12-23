@@ -30,7 +30,7 @@ public class KnowledgeStore {
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         // Build Document
-        Document document = builder.parse(new File("employees.xml"));
+        Document document = builder.parse(new File(getClass().getResource("/data/knowledge.xml").getPath()));
 
         // Normalize the XML Structure; It's just too important !!
         document.getDocumentElement().normalize();
