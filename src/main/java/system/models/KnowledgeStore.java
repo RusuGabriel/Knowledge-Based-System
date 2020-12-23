@@ -2,6 +2,8 @@ package system.models;
 
 import java.util.ArrayList;
 import org.w3c.dom.*;
+
+
 import javax.xml.parsers.*;
 import java.io.*;
 import org.xml.sax.*;
@@ -37,11 +39,20 @@ public class KnowledgeStore {
 
         // Here comes the root nodeF
         Element root = document.getDocumentElement();
-        System.out.println(root.getNodeName());
 
         // Get all employees
-        NodeList nList = document.getElementsByTagName("employee");
+        NodeList nList = document.getElementsByTagName("phone");
         System.out.println("============================");
+        for (int index = 0; index < nList.getLength(); index++) {
+            Node phoneNode = nList.item(index);
+            if (phoneNode.getNodeType() == Node.ELEMENT_NODE) {
+                Element phoneElement = (Element) phoneNode;
+                
+    System.out.println("Model : "  + phoneElement.getElementsByTagName("model").item(0).getTextContent());
+    System.out.println("Last Name : "   + phoneElement.getElementsByTagName("brand").item(0).getTextContent());
+    System.out.println("Location : "    + phoneElement.getElementsByTagName("year").item(0).getTextContent());
+            }
+        }
     }
 
 }
