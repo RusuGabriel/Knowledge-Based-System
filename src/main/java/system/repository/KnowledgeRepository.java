@@ -8,15 +8,15 @@ import system.models.*;
 import javax.xml.parsers.*;
 import system.utils.*;
 
-public class KnowledgeStore {
-    private static KnowledgeStore instance = null;
+public class KnowledgeRepository {
+    private static KnowledgeRepository instance = null;
     private ArrayList<Phone> phoneStore = null;
     private ArrayList<Tablet> tabletStore = null;
     private ArrayList<Watch> watchStore = null;
 
     private Document document = null;
 
-    private KnowledgeStore() {
+    private KnowledgeRepository() {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -31,11 +31,11 @@ public class KnowledgeStore {
 
     }
 
-    public static KnowledgeStore getInstance() {
+    public static KnowledgeRepository getInstance() {
         if (instance == null) {
-            synchronized (KnowledgeStore.class) {
+            synchronized (KnowledgeRepository.class) {
                 if (instance == null)
-                    instance = new KnowledgeStore();
+                    instance = new KnowledgeRepository();
             }
         }
         return instance;
