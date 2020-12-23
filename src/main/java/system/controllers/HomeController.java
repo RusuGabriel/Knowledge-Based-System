@@ -1,13 +1,15 @@
 package system.controllers;
 
+import system.App;
+import system.utils.*;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.event.ActionEvent;
+import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import system.App;
-import system.utils.*;
+
 
 public class HomeController implements Initializable {
 

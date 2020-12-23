@@ -21,7 +21,6 @@ public class KnowledgeRepository {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
 
-
             this.document = builder.parse(new File(getClass().getResource("/data/knowledge.xml").getPath()));
             this.document.getDocumentElement().normalize();
         } catch (Exception exception) {
