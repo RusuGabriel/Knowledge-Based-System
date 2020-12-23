@@ -3,7 +3,6 @@ package system.models;
 import java.util.ArrayList;
 import org.w3c.dom.*;
 
-
 import javax.xml.parsers.*;
 import java.io.*;
 import org.xml.sax.*;
@@ -40,17 +39,13 @@ public class KnowledgeStore {
         // Here comes the root nodeF
         Element root = document.getDocumentElement();
 
-        // Get all employees
-        NodeList nList = document.getElementsByTagName("phone");
-        System.out.println("============================");
-        for (int index = 0; index < nList.getLength(); index++) {
-            Node phoneNode = nList.item(index);
+        // Get all phones
+        NodeList phoneNodes = document.getElementsByTagName("phone");
+        for (int index = 0; index < phoneNodes.getLength(); index++) {
+            Node phoneNode = phoneNodes.item(index);
             if (phoneNode.getNodeType() == Node.ELEMENT_NODE) {
                 Element phoneElement = (Element) phoneNode;
-                
-    System.out.println("Model : "  + phoneElement.getElementsByTagName("model").item(0).getTextContent());
-    System.out.println("Last Name : "   + phoneElement.getElementsByTagName("brand").item(0).getTextContent());
-    System.out.println("Location : "    + phoneElement.getElementsByTagName("year").item(0).getTextContent());
+                phoneStore.add(new Phone(phoneElement));
             }
         }
     }
