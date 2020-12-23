@@ -13,11 +13,11 @@ import javafx.fxml.Initializable;
 
 
 public class KnowledgeBaseController implements Initializable {
-    private KnowledgeRepository knowledgeStore = KnowledgeRepository.getInstance();
+    private KnowledgeRepository knowledgeRepository = KnowledgeRepository.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        knowledgeStore.loadKnowledge();
+        knowledgeRepository.loadKnowledge();
     }
 
     @FXML
