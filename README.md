@@ -52,20 +52,9 @@ until finished
 End with an example of getting some data out of the system or using it for a little demo.
 
 ## 🔧 Running the tests <a name = "tests"></a>
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-Explain what these tests test and why
-
-```
-Give an example
+To run the tests type the following command in a terminal opened in the root directory: 
+```java
+mvn clean test
 ```
 
 ## 🎈 Usage <a name="usage"></a>
