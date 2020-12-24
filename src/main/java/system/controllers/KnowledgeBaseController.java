@@ -15,6 +15,9 @@ import javafx.fxml.Initializable;
 public class KnowledgeBaseController implements Initializable {
     private KnowledgeRepository knowledgeRepository = KnowledgeRepository.getInstance();
 
+    @FXML
+    TableView<Rental> table;  knowledgeTable
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         knowledgeRepository.loadKnowledge();

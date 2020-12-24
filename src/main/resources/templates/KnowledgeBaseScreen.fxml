@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -14,5 +18,29 @@
          </font>
       </Label>
       <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="&lt; Back" />
+      <Button layoutX="830.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="Reload" />
+      <TableView fx:id="KnowledgeTable" layoutX="13.0" layoutY="160.0" prefHeight="409.0" prefWidth="876.0">
+        <columns>
+          <TableColumn prefWidth="228.0" text="C1" />
+          <TableColumn minWidth="0.0" prefWidth="168.0" text="C2" />
+            <TableColumn prefWidth="189.0" text="Column X" />
+        </columns>
+      </TableView>
+      <Label layoutX="601.0" layoutY="124.0" prefHeight="17.0" prefWidth="97.0" text="Electonic devicce" />
+      <DropdownButton layoutX="70.0" layoutY="124.0">
+          <items>
+              <MenuItem text="Choice 1" />
+              <MenuItem text="Choice 2" />
+              <MenuItem text="Choice 3" />
+          </items>
+      </DropdownButton>
+      <Label layoutX="13.0" layoutY="124.0" text="Brand" />
+      <DropdownButton layoutX="698.0" layoutY="124.0">
+          <items>
+              <MenuItem text="Choice 1" />
+              <MenuItem text="Choice 2" />
+              <MenuItem text="Choice 3" />
+          </items>
+      </DropdownButton>
    </children>
 </AnchorPane>
