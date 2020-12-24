@@ -8,7 +8,6 @@ import system.utils.*;
 import system.models.*;
 import javax.xml.parsers.*;
 
-
 public class KnowledgeRepository {
     private static KnowledgeRepository instance = null;
     private ArrayList<Phone> phoneStore = null;
