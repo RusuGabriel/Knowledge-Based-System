@@ -35,21 +35,12 @@ Give examples
 ```
 
 ### Installing
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+To get the development environment ready to extend the current project, just type the following command in a terminal window opened in the root directory of this project:
 
 ```
-Give the example
+mvn clean install
 ```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
 
 ## 🔧 Running the tests <a name = "tests"></a>
 To run the tests type the following command in a terminal opened in the root directory: 
