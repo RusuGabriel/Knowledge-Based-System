@@ -54,6 +54,7 @@ public class App extends Application {
         } catch (Exception e) {
             System.out.println("ERROR - The error message is: ");
             System.out.println(e.getMessage());
+            System.out.println(e.getCause());
         }
     }
 

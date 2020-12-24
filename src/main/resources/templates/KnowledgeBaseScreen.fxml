@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../styles/dark-mode.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.controllers.KnowledgeBaseController">
-   <children>
-      <Label layoutX="409.0" layoutY="569.0" text="gabrielrusu.dev" />
-      <Label layoutX="300.0" layoutY="25.0" text="System Knowledge Base">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="25.0" />
-         </font>
-      </Label>
-      <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="&lt; Back" />
-      <Button layoutX="830.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="Reload" />
-      <TableView fx:id="KnowledgeTable" layoutX="13.0" layoutY="160.0" prefHeight="409.0" prefWidth="876.0">
-        <columns>
-          <TableColumn prefWidth="228.0" text="C1" />
-          <TableColumn minWidth="0.0" prefWidth="168.0" text="C2" />
-            <TableColumn prefWidth="189.0" text="Column X" />
-        </columns>
-      </TableView>
-      <Label layoutX="601.0" layoutY="124.0" prefHeight="17.0" prefWidth="97.0" text="Electonic devicce" />
-      <DropdownButton layoutX="70.0" layoutY="124.0">
-          <items>
-              <MenuItem text="Choice 1" />
-              <MenuItem text="Choice 2" />
-              <MenuItem text="Choice 3" />
-          </items>
-      </DropdownButton>
-      <Label layoutX="13.0" layoutY="124.0" text="Brand" />
-      <DropdownButton layoutX="698.0" layoutY="124.0">
-          <items>
-              <MenuItem text="Choice 1" />
-              <MenuItem text="Choice 2" />
-              <MenuItem text="Choice 3" />
-          </items>
-      </DropdownButton>
-   </children>
+    <children>
+        <Label layoutX="409.0" layoutY="569.0" text="gabrielrusu.dev" />
+        <Label layoutX="300.0" layoutY="25.0" text="System Knowledge Base">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="25.0" />
+            </font>
+        </Label>
+        <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="&lt; Back" />
+        <Button layoutX="830.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="Reload" />
+        <TableView fx:id="knowledgeTable" layoutX="13.0" layoutY="160.0" prefHeight="409.0" prefWidth="876.0">
+            <columns>
+                <TableColumn prefWidth="228.0" text="C1" />
+                <TableColumn minWidth="0.0" prefWidth="168.0" text="C2" />
+                <TableColumn prefWidth="189.0" text="Column X" />
+            </columns>
+        </TableView>
+        <ChoiceBox layoutX="70.0" layoutY="107.0" prefWidth="150.0" />
+        <ChoiceBox layoutX="736.0" layoutY="105.0" prefWidth="150.0" />
+        <Label layoutX="14.0" layoutY="106.0" prefHeight="24.0" prefWidth="56.0" text="Brand">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="689.0" layoutY="105.0" prefHeight="22.0" prefWidth="35.0" text="Type">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="14.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

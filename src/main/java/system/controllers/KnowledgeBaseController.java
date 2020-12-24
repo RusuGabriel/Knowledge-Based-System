@@ -1,7 +1,7 @@
 package system.controllers;
 
-
 import system.App;
+import system.models.ElectronicDevice;
 import system.utils.*;
 import system.repository.*;
 
@@ -10,13 +10,14 @@ import javafx.fxml.FXML;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 
 
 public class KnowledgeBaseController implements Initializable {
     private KnowledgeRepository knowledgeRepository = KnowledgeRepository.getInstance();
 
     @FXML
-    TableView<Rental> table;  knowledgeTable
+    private TableView<ElectronicDevice>  knowledgeTable;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

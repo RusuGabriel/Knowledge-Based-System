@@ -47,7 +47,7 @@
   </dependencies>
 
   <build>
-    <pluginManagement> 
+    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
