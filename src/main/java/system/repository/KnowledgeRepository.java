@@ -97,4 +97,13 @@ public class KnowledgeRepository {
         return new ArrayList<>(brands);
     }
 
+    public ArrayList<ElectronicDevice> getAll() {
+        ArrayList<ElectronicDevice> allDevices = new ArrayList<>();
+        allDevices.addAll(phoneStore);
+        allDevices.addAll(tabletStore);
+        allDevices.addAll(watchStore);
+
+        return allDevices;
+    }
+
 }
