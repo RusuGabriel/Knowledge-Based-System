@@ -36,6 +36,18 @@
             <brand>Huawei</brand>
             <year>2020</year>
         </watch>
+
+        <watch>
+            <model>Samsung Galaxy Watch Active 2</model>
+            <brand>Samsung</brand>
+            <year>2019</year>
+        </watch>
+
+        <watch>
+            <model>Samsung Gear Sport</model>
+            <brand>Samsung</brand>
+            <year>2017</year>
+        </watch>
     </watches>
 
     <tablets>
