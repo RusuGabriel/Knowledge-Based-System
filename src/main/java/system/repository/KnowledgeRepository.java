@@ -82,4 +82,19 @@ public class KnowledgeRepository {
         }
     }
 
+    public ArrayList<String> getAllBrands() {
+        Set<String> brands = new HashSet<>();
+
+        for (ElectronicDevice device : phoneStore)
+            brands.add(device.getBrand());
+
+        for (ElectronicDevice device : watchStore)
+            brands.add(device.getBrand());
+
+        for (ElectronicDevice device : tabletStore)
+            brands.add(device.getBrand());
+
+        return new ArrayList<>(brands);
+    }
+
 }

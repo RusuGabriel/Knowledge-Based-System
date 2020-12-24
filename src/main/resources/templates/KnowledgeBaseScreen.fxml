@@ -25,14 +25,14 @@
                 <TableColumn prefWidth="189.0" text="Column X" />
             </columns>
         </TableView>
-        <ChoiceBox layoutX="70.0" layoutY="107.0" prefWidth="150.0" />
-        <ChoiceBox layoutX="736.0" layoutY="105.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="brandChoice" layoutX="62.0" layoutY="107.0" prefHeight="22.0" prefWidth="124.0" />
+        <ChoiceBox fx:id="typeChoice" layoutX="762.0" layoutY="105.0" prefHeight="22.0" prefWidth="124.0" />
         <Label layoutX="14.0" layoutY="106.0" prefHeight="24.0" prefWidth="56.0" text="Brand">
             <font>
                 <Font name="Arial Rounded MT Bold" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="689.0" layoutY="105.0" prefHeight="22.0" prefWidth="35.0" text="Type">
+        <Label layoutX="720.0" layoutY="105.0" prefHeight="22.0" prefWidth="35.0" text="Type">
             <font>
                 <Font name="Arial Rounded MT Bold" size="14.0" />
             </font>
