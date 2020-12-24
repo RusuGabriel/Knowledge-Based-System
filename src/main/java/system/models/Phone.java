@@ -12,5 +12,4 @@ public class Phone {
         brand = element.getElementsByTagName("brand").item(0).getTextContent();
         year = Integer.parseInt(element.getElementsByTagName("year").item(0).getTextContent());
     }
-
 }

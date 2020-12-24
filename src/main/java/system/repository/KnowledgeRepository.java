@@ -4,9 +4,10 @@ import java.util.*;
 import org.w3c.dom.*;
 import java.io.*;
 import org.xml.sax.*;
+import system.utils.*;
 import system.models.*;
 import javax.xml.parsers.*;
-import system.utils.*;
+
 
 public class KnowledgeRepository {
     private static KnowledgeRepository instance = null;
@@ -44,7 +45,6 @@ public class KnowledgeRepository {
         phoneStore = new ArrayList<>();
         tabletStore = new ArrayList<>();
         watchStore = new ArrayList<>();
-
         // Get all phones
         parse(document, Constants.Type.PHONE);
         // Get all tablets
