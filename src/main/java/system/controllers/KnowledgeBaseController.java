@@ -37,7 +37,36 @@ public class KnowledgeBaseController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        deviceRepository.loadKnowledge();
+        deviceRepository.parseData();
+        initializeChoices();
+        initializeTable();
+    }
+
+    private void initializeTable() {
+        TableColumn<ElectronicDevice, String> modelCol = new TableColumn<>("Model");
+        modelCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, String>("Model"));
+        modelCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        modelCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
+        modelCol.setEditable(false);
+
+        TableColumn<ElectronicDevice, String> brandCol = new TableColumn<>("Brand");
+        brandCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, String>("Brand"));
+        brandCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        brandCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
+        brandCol.setEditable(false);
+
+        TableColumn<ElectronicDevice, Integer> yearCol = new TableColumn<>("Year");
+        yearCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, Integer>("Year"));
+        yearCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        yearCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
+        yearCol.setEditable(false);
+
+        table.getColumns().addAll(modelCol, brandCol, yearCol);
+        table.getItems().addAll(FXCollections.observableArrayList(deviceRepository.getAll()));
+        table.setEditable(false);
+    }
+
+    private void initializeChoices() {
         brandChoice.setItems(FXCollections.observableArrayList(deviceRepository.getAllBrands()));
         brandChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue ov, String oldValue, String newValue) {
@@ -69,28 +98,6 @@ public class KnowledgeBaseController implements Initializable {
                 }
             }
         });
-
-        TableColumn<ElectronicDevice, String> modelCol = new TableColumn<>("Model");
-        modelCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, String>("Model"));
-        modelCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        modelCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
-        modelCol.setEditable(false);
-
-        TableColumn<ElectronicDevice, String> brandCol = new TableColumn<>("Brand");
-        brandCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, String>("Brand"));
-        brandCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        brandCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
-        brandCol.setEditable(false);
-
-        TableColumn<ElectronicDevice, Integer> yearCol = new TableColumn<>("Year");
-        yearCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, Integer>("Year"));
-        yearCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        yearCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
-        yearCol.setEditable(false);
-
-        table.getColumns().addAll(modelCol, brandCol, yearCol);
-        table.getItems().addAll(FXCollections.observableArrayList(deviceRepository.getAll()));
-        table.setEditable(false);
     }
 
     @FXML

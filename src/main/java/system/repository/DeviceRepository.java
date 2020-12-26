@@ -40,7 +40,7 @@ public class DeviceRepository {
         return instance;
     }
 
-    public void loadKnowledge() {
+    public void parseData() {
         phoneStore = new ArrayList<>();
         tabletStore = new ArrayList<>();
         watchStore = new ArrayList<>();
