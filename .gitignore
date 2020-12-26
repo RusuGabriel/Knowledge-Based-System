@@ -34,4 +34,4 @@ target/
 
 # InteliJ IDEA
 .idea/
-system.iml
+*.iml
