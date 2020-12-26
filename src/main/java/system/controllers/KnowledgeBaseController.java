@@ -7,8 +7,14 @@ import system.repository.*;
 
 import java.net.URL;
 import javafx.fxml.FXML;
-import java.util.ResourceBundle;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -33,6 +39,12 @@ public class KnowledgeBaseController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         knowledgeRepository.loadKnowledge();
         brandChoice.setItems(FXCollections.observableArrayList(knowledgeRepository.getAllBrands()));
+        brandChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            public void changed(ObservableValue ov, String oldValue, String newValue) {
+                var filteredItems = knowledgeRepository.getAll().stream().filter(device -> device.getBrand().equals(newValue)).collect(Collectors.toList());
+                knowledgeTable.setItems(FXCollections.observableArrayList(filteredItems));
+            }
+        });
 
         TableColumn<ElectronicDevice, String> modelCol = new TableColumn<>("Model");
         modelCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, String>("Model"));
