@@ -80,6 +80,9 @@ public class KnowledgeBaseController implements Initializable {
         typeChoice.setItems(FXCollections.observableArrayList(deviceRepository.getAllTypes()));
         typeChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue ov, String oldType, String newType) {
+                var index = brandChoice.getSelectionModel().getSelectedIndex();
+                brandChoice.getSelectionModel().selectLast();
+                brandChoice.getSelectionModel().select(index);
                 var filteredItems = table.getItems().stream().filter(device -> testType(newType, device))
                         .collect(Collectors.toList());
                 table.setItems(FXCollections.observableArrayList(filteredItems));
