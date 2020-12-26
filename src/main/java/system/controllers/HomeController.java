@@ -51,7 +51,7 @@ public class HomeController implements Initializable {
 
     @FXML
     public void goToRules(ActionEvent actionEvent) {
-        App.display(Constants.Screens.KNOWLEDGE_BASE);
+        App.display(Constants.Screens.RULES);
     }
 
     @FXML
