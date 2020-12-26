@@ -10,9 +10,6 @@ import system.repository.*;
 
 import java.net.URL;
 import javafx.fxml.FXML;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
@@ -44,7 +41,8 @@ public class KnowledgeBaseController implements Initializable {
         brandChoice.setItems(FXCollections.observableArrayList(deviceRepository.getAllBrands()));
         brandChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue ov, String oldValue, String newValue) {
-                var filteredItems = deviceRepository.getAll().stream().filter(device -> device.getBrand().equals(newValue) || newValue.equals("All"))
+                var filteredItems = deviceRepository.getAll().stream()
+                        .filter(device -> device.getBrand().equals(newValue) || newValue.equals("All"))
                         .collect(Collectors.toList());
                 table.setItems(FXCollections.observableArrayList(filteredItems));
             }
