@@ -8,7 +8,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../styles/dark-mode.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.controllers.RulesController">
    <children>
       <Label layoutX="409.0" layoutY="569.0" text="gabrielrusu.dev" />
-      <Label layoutX="368.0" layoutY="14.0" stylesheets="@../styles/dark-mode.css" text="System Rules">
+      <Label layoutX="368.0" layoutY="25.0" stylesheets="@../styles/dark-mode.css" text="System Rules">
          <font>
             <Font name="Arial Rounded MT Bold" size="25.0" />
          </font>
