@@ -2,6 +2,9 @@ package system.controllers;
 
 import system.App;
 import system.models.ElectronicDevice;
+import system.models.Phone;
+import system.models.Tablet;
+import system.models.Watch;
 import system.utils.*;
 import system.repository.*;
 
@@ -24,7 +27,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.IntegerStringConverter;
 
 public class KnowledgeBaseController implements Initializable {
-    private KnowledgeRepository knowledgeRepository = KnowledgeRepository.getInstance();
+    private DeviceRepository deviceRepository = DeviceRepository.getInstance();
 
     @FXML
     private ChoiceBox brandChoice;
@@ -33,40 +36,63 @@ public class KnowledgeBaseController implements Initializable {
     private ChoiceBox typeChoice;
 
     @FXML
-    private TableView<ElectronicDevice> knowledgeTable;
+    private TableView<ElectronicDevice> table;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        knowledgeRepository.loadKnowledge();
-        brandChoice.setItems(FXCollections.observableArrayList(knowledgeRepository.getAllBrands()));
+        deviceRepository.loadKnowledge();
+        brandChoice.setItems(FXCollections.observableArrayList(deviceRepository.getAllBrands()));
         brandChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue ov, String oldValue, String newValue) {
-                var filteredItems = knowledgeRepository.getAll().stream().filter(device -> device.getBrand().equals(newValue)).collect(Collectors.toList());
-                knowledgeTable.setItems(FXCollections.observableArrayList(filteredItems));
+                var filteredItems = deviceRepository.getAll().stream().filter(device -> device.getBrand().equals(newValue) || newValue.equals("All"))
+                        .collect(Collectors.toList());
+                table.setItems(FXCollections.observableArrayList(filteredItems));
+            }
+        });
+
+        typeChoice.setItems(FXCollections.observableArrayList(deviceRepository.getAllTypes()));
+        typeChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            public void changed(ObservableValue ov, String oldType, String newType) {
+                var filteredItems = table.getItems().stream().filter(device -> testType(newType, device))
+                        .collect(Collectors.toList());
+                table.setItems(FXCollections.observableArrayList(filteredItems));
+            }
+
+            private boolean testType(String newType, ElectronicDevice device) {
+                switch (newType) {
+                    case "Phones":
+                        return device instanceof Phone;
+                    case "Tablets":
+                        return device instanceof Tablet;
+                    case "Watches":
+                        return device instanceof Watch;
+                    default:
+                        return true;
+                }
             }
         });
 
         TableColumn<ElectronicDevice, String> modelCol = new TableColumn<>("Model");
         modelCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, String>("Model"));
         modelCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        modelCol.prefWidthProperty().bind(knowledgeTable.widthProperty().multiply(0.33));
+        modelCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
         modelCol.setEditable(false);
 
         TableColumn<ElectronicDevice, String> brandCol = new TableColumn<>("Brand");
         brandCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, String>("Brand"));
         brandCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        brandCol.prefWidthProperty().bind(knowledgeTable.widthProperty().multiply(0.33));
+        brandCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
         brandCol.setEditable(false);
 
         TableColumn<ElectronicDevice, Integer> yearCol = new TableColumn<>("Year");
         yearCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, Integer>("Year"));
         yearCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        yearCol.prefWidthProperty().bind(knowledgeTable.widthProperty().multiply(0.33));
+        yearCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
         yearCol.setEditable(false);
 
-        knowledgeTable.getColumns().addAll(modelCol, brandCol, yearCol);
-        knowledgeTable.getItems().addAll(FXCollections.observableArrayList(knowledgeRepository.getAll()));
-        knowledgeTable.setEditable(false);
+        table.getColumns().addAll(modelCol, brandCol, yearCol);
+        table.getItems().addAll(FXCollections.observableArrayList(deviceRepository.getAll()));
+        table.setEditable(false);
     }
 
     @FXML

@@ -17,7 +17,7 @@
         </Label>
         <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="&lt; Back" />
         <Button layoutX="830.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="Reload" />
-        <TableView fx:id="knowledgeTable" layoutX="13.0" layoutY="160.0" prefHeight="409.0" prefWidth="876.0" />
+        <TableView fx:id="table" layoutX="13.0" layoutY="160.0" prefHeight="409.0" prefWidth="876.0" />
         <ChoiceBox fx:id="brandChoice" layoutX="62.0" layoutY="107.0" prefHeight="22.0" prefWidth="124.0" />
         <ChoiceBox fx:id="typeChoice" layoutX="762.0" layoutY="105.0" prefHeight="22.0" prefWidth="124.0" />
         <Label layoutX="14.0" layoutY="106.0" prefHeight="24.0" prefWidth="56.0" text="Brand">

@@ -8,15 +8,15 @@ import system.utils.*;
 import system.models.*;
 import javax.xml.parsers.*;
 
-public class KnowledgeRepository {
-    private static KnowledgeRepository instance = null;
+public class DeviceRepository {
+    private static DeviceRepository instance = null;
     private ArrayList<Phone> phoneStore = null;
     private ArrayList<Tablet> tabletStore = null;
     private ArrayList<Watch> watchStore = null;
 
     private Document document = null;
 
-    private KnowledgeRepository() {
+    private DeviceRepository() {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -30,11 +30,11 @@ public class KnowledgeRepository {
 
     }
 
-    public static KnowledgeRepository getInstance() {
+    public static DeviceRepository getInstance() {
         if (instance == null) {
-            synchronized (KnowledgeRepository.class) {
+            synchronized (DeviceRepository.class) {
                 if (instance == null)
-                    instance = new KnowledgeRepository();
+                    instance = new DeviceRepository();
             }
         }
         return instance;
@@ -93,6 +93,7 @@ public class KnowledgeRepository {
 
         for (ElectronicDevice device : tabletStore)
             brands.add(device.getBrand());
+        brands.add("All");
 
         return new ArrayList<>(brands);
     }
@@ -104,6 +105,15 @@ public class KnowledgeRepository {
         allDevices.addAll(watchStore);
 
         return allDevices;
+    }
+
+    public ArrayList<String> getAllTypes() {
+        var result = new ArrayList<String>();
+        result.add("Phones");
+        result.add("Tablets");
+        result.add("Watches");
+        result.add("All");
+        return result;
     }
 
 }
