@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import system.repository.DeviceRepository;
 import system.utils.Constants;
 import javafx.fxml.FXMLLoader;
 import java.util.logging.Logger;
@@ -59,6 +60,8 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        DeviceRepository deviceRepository = DeviceRepository.getInstance();
+        deviceRepository.parseData();
         launch(args);
     }
 
