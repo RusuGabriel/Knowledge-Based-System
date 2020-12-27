@@ -25,7 +25,7 @@ The first part, the knowledge base, represents facts about the world, often in s
 
 The second part, the inference engine, allows new knowledge to be inferred. Most commonly, it can take the form of IF-THEN rules coupled with forward or backward chaining approaches. Other approaches include the use of automated theorem provers, logic programming, blackboard systems, and term rewriting systems such as CHR (Constraint Handling Rules).
 ## 🏁 Getting Started <a name = "getting_started"></a>
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 The following are the necessary tools needed to run/extend the current project:
