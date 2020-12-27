@@ -28,11 +28,10 @@ The second part, the inference engine, allows new knowledge to be inferred. Most
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-What things you need to install the software and how to install them.
+The following are the necessary tools needed to run/extend the current project:
+- [Maven](https://maven.apache.org/download.cgi) - build tool for Java
+- [Java JDK 11+](https://www.oracle.com/ro/java/technologies/javase-downloads.html) - java development kit
 
-```
-Give examples
-```
 
 ### Installing
 To get the development environment ready to extend the current project, just type the following command in a terminal window opened in the root directory of this project:
