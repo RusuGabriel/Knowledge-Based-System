@@ -14,6 +14,7 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
+- [Preview](#preview)
 - [Built Using](#built_using)
 - [Authors](#authors)
 - [TODO](./TODO.md)
@@ -52,6 +53,8 @@ To run the app type:
 ```java
 mvn clean javafx:run
 ```
+
+## 👀 Preview <a name = "preview"></a>
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
