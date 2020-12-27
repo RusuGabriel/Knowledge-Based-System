@@ -55,7 +55,7 @@ mvn clean javafx:run
 ```
 
 ## 👀 Preview <a name = "preview"></a>
-
+ <img width=900px height=630px src="src\main\resources\images\preview.png" alt="Project logo">
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Visual Studio Code](https://code.visualstudio.com/) - code editor
