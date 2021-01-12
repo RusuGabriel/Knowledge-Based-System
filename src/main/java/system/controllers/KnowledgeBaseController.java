@@ -1,16 +1,14 @@
 package system.controllers;
 
 import system.App;
-import system.models.ElectronicDevice;
-import system.models.Phone;
-import system.models.Tablet;
-import system.models.Watch;
+import system.models.*;
 import system.utils.*;
 import system.repository.*;
 
 import java.net.URL;
 import javafx.fxml.FXML;
 import java.util.ResourceBundle;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import javafx.beans.value.ChangeListener;
@@ -35,6 +33,14 @@ public class KnowledgeBaseController implements Initializable {
 
     @FXML
     private TableView<ElectronicDevice> table;
+
+    @FXML
+    private TextField startPrice;
+
+    @FXML
+    private TextField endPrice;
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -86,7 +92,9 @@ public class KnowledgeBaseController implements Initializable {
         typeChoice.setItems(FXCollections.observableArrayList(deviceRepository.getAllTypes()));
         typeChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue ov, String oldType, String newType) {
-                var index = brandChoice.getSelectionModel().getSelectedIndex() >= 0 ? brandChoice.getSelectionModel().getSelectedIndex() : 0;
+                var index = brandChoice.getSelectionModel().getSelectedIndex() >= 0
+                        ? brandChoice.getSelectionModel().getSelectedIndex()
+                        : 0;
                 brandChoice.getSelectionModel().selectLast();
                 brandChoice.getSelectionModel().select(index);
                 var filteredItems = table.getItems().stream().filter(device -> testType(newType, device))
@@ -114,4 +122,18 @@ public class KnowledgeBaseController implements Initializable {
         App.display(Constants.Screens.HOME);
     }
 
+
+    @FXML
+    public void searchAll() {
+        Double startingPrice = Double.parseDouble(startPrice.getText());
+        Double endingPrice = Double.parseDouble(endPrice.getText());
+        var filteredResults = table.getItems().stream().filter(device ->  device.getPrice() >= startingPrice && device.getPrice() <= endingPrice).collect(Collectors.toList());
+        table.setItems(FXCollections.observableArrayList(filteredResults));
+
+    }
+
+    @FXML
+    public void resetAll() {
+        
+    }
 }
