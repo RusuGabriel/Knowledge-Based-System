@@ -64,7 +64,7 @@ public class KnowledgeBaseController implements Initializable {
         TableColumn<ElectronicDevice, Double> priceCol = new TableColumn<>("Price");
         priceCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, Double>("Price"));
         priceCol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
-        priceCol.prefWidthProperty().bind(table.widthProperty().multiply(0.25));
+        priceCol.prefWidthProperty().bind(table.widthProperty().multiply(0.245));
         priceCol.setEditable(false);
 
         table.getColumns().addAll(modelCol, brandCol, yearCol, priceCol);
