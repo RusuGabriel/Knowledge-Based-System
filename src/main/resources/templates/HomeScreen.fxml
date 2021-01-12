@@ -15,13 +15,13 @@
             <Image url="@../images/ai.png" />
          </image>
       </ImageView>
-      <Label layoutX="300.0" layoutY="25.0" text="Knoledge Based System">
+      <Label layoutX="224.0" layoutY="22.0" text="Electronic Devices Knowledge Base System">
          <font>
             <Font name="Arial Rounded MT Bold" size="25.0" />
          </font>
       </Label>
       <Button layoutX="31.0" layoutY="292.0" mnemonicParsing="false" onAction="#goToKnowledgeBase" prefHeight="31.0" prefWidth="162.0" text="System Knowledge Base" />
-      <Button layoutX="31.0" layoutY="253.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="162.0" text="Info" />
+      <Button layoutX="31.0" layoutY="253.0" mnemonicParsing="false" onAction="#goToInfo" prefHeight="31.0" prefWidth="162.0" text="Info Settings" />
       <Label layoutX="409.0" layoutY="569.0" text="gabrielrusu.dev" />
       <PieChart fx:id="chart" layoutX="241.0" layoutY="66.0" prefHeight="500.0" prefWidth="500.0" />
    </children>

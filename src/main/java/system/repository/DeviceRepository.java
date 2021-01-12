@@ -109,11 +109,33 @@ public class DeviceRepository {
 
     public ArrayList<String> getAllTypes() {
         var result = new ArrayList<String>();
+        result.add("All");
         result.add(Constants.Type.PHONES);
         result.add(Constants.Type.TABLETS);
         result.add(Constants.Type.WATCHES);
-        result.add("All");
         return result;
+    }
+
+    public void reloadData() {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+
+            this.document = builder.parse(new File(getClass().getResource("/data/knowledge.xml").getPath()));
+            this.document.getDocumentElement().normalize();
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            System.exit(-1);
+        }
+        phoneStore = new ArrayList<>();
+        tabletStore = new ArrayList<>();
+        watchStore = new ArrayList<>();
+        // Get all phones
+        parse(document, Constants.Type.PHONE);
+        // Get all tablets
+        parse(document, Constants.Type.TABLET);
+        // Get all watches
+        parse(document, Constants.Type.WATCH);
     }
 
 }

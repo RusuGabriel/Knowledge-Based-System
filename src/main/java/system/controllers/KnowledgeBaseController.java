@@ -8,7 +8,6 @@ import system.repository.*;
 import java.net.URL;
 import javafx.fxml.FXML;
 import java.util.ResourceBundle;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import javafx.beans.value.ChangeListener;
@@ -40,10 +39,10 @@ public class KnowledgeBaseController implements Initializable {
     @FXML
     private TextField endPrice;
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        endPrice.setText("0");
+        startPrice.setText("0");
         initializeChoices();
         initializeTable();
     }
@@ -122,18 +121,25 @@ public class KnowledgeBaseController implements Initializable {
         App.display(Constants.Screens.HOME);
     }
 
-
     @FXML
     public void searchAll() {
         Double startingPrice = Double.parseDouble(startPrice.getText());
         Double endingPrice = Double.parseDouble(endPrice.getText());
-        var filteredResults = table.getItems().stream().filter(device ->  device.getPrice() >= startingPrice && device.getPrice() <= endingPrice).collect(Collectors.toList());
+        var filteredResults = table.getItems().stream()
+                .filter(device -> device.getPrice() >= startingPrice && device.getPrice() <= endingPrice)
+                .collect(Collectors.toList());
         table.setItems(FXCollections.observableArrayList(filteredResults));
 
     }
 
     @FXML
     public void resetAll() {
-        
+        brandChoice.getSelectionModel().select(0);
+        typeChoice.getSelectionModel().select(0);
+        endPrice.setText("0");
+        startPrice.setText("0");
+        table.setItems(FXCollections.observableArrayList(deviceRepository.getAll()));
+
     }
+
 }

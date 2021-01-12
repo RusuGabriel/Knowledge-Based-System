@@ -50,13 +50,12 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    public void goToRules(ActionEvent actionEvent) {
-        App.display(Constants.Screens.RULES);
-    }
-
-    @FXML
     public void goToKnowledgeBase(ActionEvent actionEvent) {
         App.display(Constants.Screens.KNOWLEDGE_BASE);
     }
 
+    @FXML
+    public void goToInfo() {
+        App.display(Constants.Screens.INFO);
+    }
 }
