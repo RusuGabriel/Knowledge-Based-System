@@ -6,9 +6,7 @@ public class Tablet extends ElectronicDevice {
     private Double inches;
 
     public Tablet(Element element) {
-        setModel(element.getElementsByTagName("model").item(0).getTextContent());
-        setBrand(element.getElementsByTagName("brand").item(0).getTextContent());
-        setYear(Integer.parseInt(element.getElementsByTagName("year").item(0).getTextContent()));
+        super(element);
         inches = Double.parseDouble(element.getElementsByTagName("inches").item(0).getTextContent());
     }
 }

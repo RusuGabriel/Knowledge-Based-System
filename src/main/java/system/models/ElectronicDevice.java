@@ -1,9 +1,18 @@
 package system.models;
+import org.w3c.dom.Element;
 
 public class ElectronicDevice {
     private String brand;
     private String model;
     private Integer year;
+    private Double price;
+
+    ElectronicDevice(Element element) {
+        setModel(element.getElementsByTagName("model").item(0).getTextContent());
+        setBrand(element.getElementsByTagName("brand").item(0).getTextContent());
+        setYear(Integer.parseInt(element.getElementsByTagName("year").item(0).getTextContent()));
+        setPrice(Double.parseDouble(element.getElementsByTagName("price").item(0).getTextContent()));
+    }
 
     public String getBrand() {
         return brand;
@@ -27,6 +36,14 @@ public class ElectronicDevice {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
 

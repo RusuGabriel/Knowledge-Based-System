@@ -109,9 +109,9 @@ public class DeviceRepository {
 
     public ArrayList<String> getAllTypes() {
         var result = new ArrayList<String>();
-        result.add("Phones");
-        result.add("Tablets");
-        result.add("Watches");
+        result.add(Constants.Type.PHONES);
+        result.add(Constants.Type.TABLETS);
+        result.add(Constants.Type.WATCHES);
         result.add("All");
         return result;
     }

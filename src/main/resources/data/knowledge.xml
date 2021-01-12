@@ -4,24 +4,28 @@
             <model>Samsung Galaxy S20 FE</model>
             <brand>Samsung</brand>
             <year>2020</year>
+            <price>2399.99</price>
         </phone>
 
         <phone>
             <model>Samsung Galaxy M31</model>
             <brand>Samsung</brand>
             <year>2020</year>
+            <price>1399.99</price>
         </phone>
 
         <phone>
             <model>Samsung Galaxy F41</model>
             <brand>Samsung</brand>
             <year>2020</year>
+            <price>1899.99</price>
         </phone>
 
         <phone>
             <model>Apple iPhone 12 Pro Max</model>
             <brand>Apple</brand>
             <year>2020</year>
+            <price>7999.99</price>
         </phone>
     </phones>
     <watches>
@@ -29,24 +33,28 @@
             <model>Apple Watch Series 4</model>
             <brand>Apple</brand>
             <year>2018</year>
+            <price>1999.99</price>
         </watch>
 
         <watch>
             <model>Huawei Watch GT 2 Pro</model>
             <brand>Huawei</brand>
             <year>2020</year>
+            <price>999.99</price>
         </watch>
 
         <watch>
             <model>Samsung Galaxy Watch Active 2</model>
             <brand>Samsung</brand>
             <year>2019</year>
+            <price>1199.99</price>
         </watch>
 
         <watch>
             <model>Samsung Gear Sport</model>
             <brand>Samsung</brand>
             <year>2017</year>
+            <price>1449.99</price>
         </watch>
     </watches>
 
@@ -56,6 +64,7 @@
             <brand>Huawei</brand>
             <year>2020</year>
             <inches>10</inches>
+            <price>900</price>
         </tablet>
 
         <tablet>
@@ -63,6 +72,7 @@
             <brand>Samsung</brand>
             <year>2020</year>
             <inches>11</inches>
+            <price>1200</price>
         </tablet>
     </tablets>
 </electronics>

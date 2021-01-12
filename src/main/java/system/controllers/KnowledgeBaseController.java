@@ -21,6 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.util.converter.DoubleStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 
 public class KnowledgeBaseController implements Initializable {
@@ -45,22 +46,28 @@ public class KnowledgeBaseController implements Initializable {
         TableColumn<ElectronicDevice, String> modelCol = new TableColumn<>("Model");
         modelCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, String>("Model"));
         modelCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        modelCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
+        modelCol.prefWidthProperty().bind(table.widthProperty().multiply(0.25));
         modelCol.setEditable(false);
 
         TableColumn<ElectronicDevice, String> brandCol = new TableColumn<>("Brand");
         brandCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, String>("Brand"));
         brandCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        brandCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
+        brandCol.prefWidthProperty().bind(table.widthProperty().multiply(0.25));
         brandCol.setEditable(false);
 
         TableColumn<ElectronicDevice, Integer> yearCol = new TableColumn<>("Year");
         yearCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, Integer>("Year"));
         yearCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        yearCol.prefWidthProperty().bind(table.widthProperty().multiply(0.33));
+        yearCol.prefWidthProperty().bind(table.widthProperty().multiply(0.25));
         yearCol.setEditable(false);
 
-        table.getColumns().addAll(modelCol, brandCol, yearCol);
+        TableColumn<ElectronicDevice, Double> priceCol = new TableColumn<>("Price");
+        priceCol.setCellValueFactory(new PropertyValueFactory<ElectronicDevice, Double>("Price"));
+        priceCol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+        priceCol.prefWidthProperty().bind(table.widthProperty().multiply(0.25));
+        priceCol.setEditable(false);
+
+        table.getColumns().addAll(modelCol, brandCol, yearCol, priceCol);
         table.getItems().addAll(FXCollections.observableArrayList(deviceRepository.getAll()));
         table.setEditable(false);
     }
@@ -89,11 +96,11 @@ public class KnowledgeBaseController implements Initializable {
 
             private boolean testType(String newType, ElectronicDevice device) {
                 switch (newType) {
-                    case "Phones":
+                    case Constants.Type.PHONES:
                         return device instanceof Phone;
-                    case "Tablets":
+                    case Constants.Type.TABLETS:
                         return device instanceof Tablet;
-                    case "Watches":
+                    case Constants.Type.WATCHES:
                         return device instanceof Watch;
                     default:
                         return true;

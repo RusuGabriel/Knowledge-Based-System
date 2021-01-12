@@ -18,6 +18,10 @@ public final class Constants {
         public static final String TABLET = "tablet";
         public static final String WATCH = "watch";
 
+        public static final String PHONES = "Phones";
+        public static final String TABLETS = "Tablets";
+        public static final String WATCHES = "Watches";
+
         private Type() {
         }
     }
