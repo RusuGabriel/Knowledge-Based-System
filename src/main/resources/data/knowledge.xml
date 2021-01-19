@@ -75,4 +75,85 @@
             <price>1200</price>
         </tablet>
     </tablets>
+
+    <rules>
+        <rule>
+            <if>
+                <electronic> X </electronic>
+                <rel>has </rel>
+                <what> price </what>
+                <higher_than> X1 </higher_than>
+                <and>
+                    <lower_than> X2 </lower_than>
+                </and>
+            </if>
+            <then>
+                <rel>display</rel>
+                <who> X </who>
+            </then>
+        </rule>
+        <rule>
+            <if>
+                <electronic> X </electronic>
+                <rel>has </rel>
+                <what> brand </what>
+                <value> Y </value>
+            </if>
+            <then>
+                <rel>display</rel>
+                <who> X </who>
+            </then>
+        </rule>
+        <rule>
+            <if>
+                <electronic> X </electronic>
+                <rel>has </rel>
+                <what> type </what>
+                <value> Y </value>
+            </if>
+            <then>
+                <rel>display</rel>
+                <who> X </who>
+            </then>
+        </rule>
+        <rule>
+            <if>
+                <electronic> X </electronic>
+                <rel>has </rel>
+                <what> brand </what>
+                <brand>X1 </brand>
+                <and>
+                    <type> X2 </type>
+                </and>
+            </if>
+            <then>
+                <rel>display</rel>
+                <who> X </who>
+            </then>
+        </rule>
+        <rule>
+            <if>
+                <electronic> X </electronic>
+                <rel>has </rel>
+                <what> brand </what>
+                <brand>X1 </brand>
+                <and>
+                    <what> type </what>
+                    <type> X2 </type>
+                    <and>
+                        <what>price</what>
+                        <higher_than> X3 </higher_than>
+                        <and>
+                            <what>price</what>
+                            <lower_than> X4 </lower_than>
+                        </and>
+                    </and>
+                </and>
+            </if>
+            <then>
+                <rel>display</rel>
+                <who> X </who>
+            </then>
+        </rule>
+    </rules>
 </electronics>

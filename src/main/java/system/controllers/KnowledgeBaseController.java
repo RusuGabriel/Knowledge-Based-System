@@ -124,7 +124,9 @@ public class KnowledgeBaseController implements Initializable {
     @FXML
     public void searchAll() {
         Double startingPrice = Double.parseDouble(startPrice.getText());
-        Double endingPrice = Double.parseDouble(endPrice.getText());
+        Double end = Double.parseDouble(endPrice.getText());
+        Double endingPrice = end < 0.01 ? 999999999999.9 : end;
+
         var filteredResults = table.getItems().stream()
                 .filter(device -> device.getPrice() >= startingPrice && device.getPrice() <= endingPrice)
                 .collect(Collectors.toList());
@@ -139,7 +141,6 @@ public class KnowledgeBaseController implements Initializable {
         endPrice.setText("0");
         startPrice.setText("0");
         table.setItems(FXCollections.observableArrayList(deviceRepository.getAll()));
-
     }
 
 }
