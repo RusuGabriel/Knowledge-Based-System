@@ -6,7 +6,7 @@
 <h1 align="center">Knowledge-Based System</h1>
 
 
-<p align="center"> This project aims to implement a simple yet powerful Knowledge-Based System from scratch using the Java Language. The purpose of this project is to make the best decision regarding electronics purchases.
+<p align="center"> This project aims to implement a simple yet powerful Knowledge-Based System from scratch using the Java Language. The purpose of this project is to help you make the best decision regarding electronics purchases.
     <br> 
 </p>
 
