@@ -58,21 +58,21 @@
         </watch>
 
         <watch>
-            <model>Apple Watch 4</model>
+            <model>Apple Watch SE</model>
             <brand>Apple</brand>
-            <year>2018</year>
+            <year>2020</year>
             <price>1549.99</price>
         </watch>
 
         <watch>
-            <model>Apple Watch 5</model>
+            <model>Apple Watch Series 5</model>
             <brand>Apple</brand>
             <year>2019</year>
             <price>1899.99</price>
         </watch>
 
         <watch>
-            <model>Apple Watch 6</model>
+            <model>Apple Watch Series 6</model>
             <brand>Apple</brand>
             <year>2020</year>
             <price>2199.99</price>
