@@ -62,4 +62,4 @@ mvn clean javafx:run
 - [JDK 15](https://www.oracle.com/java/technologies/javase-downloads.html) - virtual machine for Java apps
 
 ## ✍️ Authors <a name = "authors"></a>
-- [@RusuGabriel](https://github.com/RusuGabriel) - Idea & Initial work
+- [@gabriel-rusu](https://github.com/gabriel-rusu) - Idea & Initial work
